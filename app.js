@@ -4,7 +4,10 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+var config = require('./config');
+var db = require('./db');
+var _dbUrl = config.db_url;
+var dbname = config.database;
 ///
 require('dotenv').config()
 ////
@@ -45,5 +48,17 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+// Connect to Mongo on start
+db.connect(_dbUrl, dbname, function (err) {
+  if (err) {
+    console.log(err);
+    console.log('Unable to connect to Mongo.');
+    process.exit(1);
+  } else {
+    console.log('Connected successfully database...');
+  }
+});
+
 
 module.exports = app;
