@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Subscriptions</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <style>
+    table th,table td{
+      border:1px solid #ccc;
+      border-collapse: collapse;
+      text-align: left;
+      padding:5px;
+    }
+  </style>
+  <body>
+    <h1>Subscriptions</h1>
+    <table>
+      <thead>
+        <th>Subscription ID</th>
+        <th>Plan ID</th>
+        <th>Pet Name</th>
+        <th>Pet Age</th>
+      </thead>
+      <tbody>
+          <% subscriptions.forEach(function( subscription){ %>
+            <tr>
+              <td> <%= subscription.id %> </td>
+              <td> <%= subscription.plan_id %> </td>
+              <td> <%= subscription.cf_pet_name %> </td>
+              <td> <%= subscription.cf_pet_age %> </td>
+            </tr>
+          <% }) %>
+      </tbody>
+    </table>
+  </body>
+</html>
