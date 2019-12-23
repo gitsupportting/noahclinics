@@ -49,16 +49,16 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-// Connect to Mongo on start
-db.connect(_dbUrl, dbname, function (err) {
-  if (err) {
-    console.log(err);
-    console.log('Unable to connect to Mongo.');
-    process.exit(1);
-  } else {
-    console.log('Connected successfully database...');
-  }
-});
+// // Connect to Mongo on start
+// db.connect(_dbUrl, dbname, function (err) {
+//   if (err) {
+//     console.log(err);
+//     console.log('Unable to connect to Mongo.');
+//     process.exit(1);
+//   } else {
+//     console.log('Connected successfully database...');
+//   }
+// });
 
 
 module.exports = app;
