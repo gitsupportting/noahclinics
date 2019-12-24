@@ -54,7 +54,7 @@ db.connect(dbUrl, dbname, function (err) {
   if (err) {
     console.log(err);
     console.log('Unable to connect to Mongo.');
-    process.exit(1);
+    //process.exit(1);
   } else {
     console.log('Connected successfully database...');
   }
